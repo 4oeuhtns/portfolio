@@ -28,7 +28,7 @@ export const Cursor = () => {
 
   return (
     <motion.div
-      className="fixed top-0 left-0 w-[32px] h-[32px] rounded-full bg-[#eaffbc] mix-blend-difference flex justify-center items-center pointer-events-none"
+      className="z-50 fixed top-0 left-0 w-[32px] h-[32px] rounded-full bg-[#eaffbc] mix-blend-difference flex justify-center items-center pointer-events-none"
       style={{
         translateX: cursorXSpring,
         translateY: cursorYSpring,

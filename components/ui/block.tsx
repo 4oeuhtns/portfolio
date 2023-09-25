@@ -4,20 +4,11 @@ import React, { useState, useEffect } from 'react';
 
 import 'styles/block.css';
 
-export const Block = () => {
-  const [scrollY, setScrollY] = useState(0);
+interface BlockProps {
+  scrollY: number;
+}
 
-  const handleScroll = () => {
-    setScrollY(window.scrollY);
-  };
-
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
+export const Block = ({ scrollY }: BlockProps) => {
   let y = scrollY
   const threshold = 500;
   const minSize = 0.75
@@ -64,18 +55,17 @@ export const Block = () => {
         </div>
         <div className="line fancy">
           <a>
-            <span className="letter">e</span>
-            <span className="letter">x</span>
             <span className="letter">p</span>
-            <span className="letter">l</span>
+            <span className="letter">r</span>
             <span className="letter">o</span>
-            <span className="letter">i</span>
-            <span className="letter">t</span>
+            <span className="letter">g</span>
+            <span className="letter">r</span>
             <span className="letter">a</span>
-            <span className="letter">t</span>
+            <span className="letter">m</span>
+            <span className="letter">m</span>
             <span className="letter">i</span>
-            <span className="letter">o</span>
             <span className="letter">n</span>
+            <span className="letter">g</span>
           </a>
         </div>
         <div className="line fancy">
