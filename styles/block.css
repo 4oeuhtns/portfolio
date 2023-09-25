@@ -1,0 +1,71 @@
+.line {
+    @apply flex justify-between;
+}
+
+.letter {
+    @apply font-Garamond text-txt text-6xl uppercase;
+}
+
+.text:has(.fancy:hover) .line:not(.fancy:hover) {
+    @apply opacity-20 transition-all duration-300 ease-in-out;
+}
+
+.text:not(:hover) .line:not(.fancy:hover) {
+    @apply opacity-100 transition-all duration-700 ease-out;
+}
+
+.fancy .letter {
+    @apply italic inline-block transition-all duration-300 ease-in-out;
+}
+
+.fancy:hover .letter {
+    @apply transition-all duration-700;
+}
+
+.fancy:hover .letter:nth-child(1) {
+    @apply -translate-x-7 -translate-y-6 rotate-[13deg];
+}
+
+.fancy:hover .letter:nth-child(2) {
+    @apply -translate-x-6 translate-y-2 rotate-[-13deg];
+}
+
+.fancy:hover .letter:nth-child(3) {
+    @apply -translate-x-5 translate-y-4 rotate-[31deg];
+}
+
+.fancy:hover .letter:nth-child(4) {
+    @apply -translate-x-4 -translate-y-2 rotate-[-10deg];
+}
+
+.fancy:hover .letter:nth-child(5) {
+    @apply -translate-x-2 -translate-y-7 rotate-[-45deg];
+}
+
+.fancy:hover .letter:nth-child(6) {
+    @apply -translate-x-1 translate-y-1 rotate-[18deg];
+}
+
+.fancy:hover .letter:nth-child(7) {
+    @apply translate-x-1 translate-y-7 rotate-[45deg];
+}
+
+.fancy:hover .letter:nth-child(8) {
+    @apply translate-x-3 translate-y-3 rotate-[-21deg];
+}
+
+.fancy:hover .letter:nth-child(9) {
+    @apply translate-x-4 -translate-y-2 rotate-[-12deg];
+}
+
+.fancy:hover .letter:nth-child(10) {
+    @apply translate-x-5 translate-y-1 rotate-[8deg];
+}
+
+.fancy:hover .letter:nth-child(11) {
+    @apply translate-x-6 translate-y-6 rotate-[-31deg];
+}
+
+.fancy:hover .letter:nth-child(12) {
+    @apply translate-x-7 translate-y-3 rotate-[-16deg];
+}
