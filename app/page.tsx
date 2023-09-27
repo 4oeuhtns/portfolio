@@ -1,8 +1,10 @@
 "use client";
 
 import { Block } from "@/components/ui/block";
-import { Navbar } from "@/components/ui/navbar";
-import { useSpring } from "framer-motion";
+import { DropdownMenu } from "@/components/ui/navigation/dropdownmenu";
+import { Navbar } from "@/components/ui/navigation/navbar";
+import { NavItem } from "@/components/ui/navigation/navitem";
+import { ChevronDown } from "lucide-react";
 
 import { useEffect, useState } from "react";
 
@@ -22,7 +24,14 @@ const HomePage = () => {
   }, []);
   return (
     <div>
-      <Navbar scrollY={scrollY} />
+      <Navbar>
+        <NavItem icon="🍀"/>
+        <NavItem icon="😀"/>
+        <NavItem icon="🍀"/>
+        <NavItem icon={<ChevronDown />}>
+          <DropdownMenu />
+        </NavItem>
+      </Navbar>
       <div className='relative w-screen h-screen flex justify-center items-center bg-bg'>
         <Block scrollY={scrollY} />
       </div>
