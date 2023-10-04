@@ -1,5 +1,6 @@
 "use client"
 
+import Link from 'next/link';
 import React, { useState, useEffect } from 'react';
 
 import 'styles/block.css';
@@ -22,39 +23,39 @@ export const Block = ({ scrollY }: BlockProps) => {
     <div className="fixed flex justify-center" style={{transform: `translate(0, ${-y}px) scale(${scale})`}}>
       <div className="text">
         <div className="line">
-          <a>
+          <div>
             <span className="letter">f</span>
             <span className="letter">e</span>
             <span className="letter">l</span>
             <span className="letter">i</span>
             <span className="letter">x</span>
-          </a>
-          <a>
+          </div>
+          <div>
             <span className="letter">z</span>
             <span className="letter">h</span>
             <span className="letter">a</span>
             <span className="letter">o</span>
-          </a>
+          </div>
         </div>
         <div className="line">
-          <a>
+          <div>
             <span className="letter">f</span>
             <span className="letter">r</span>
             <span className="letter">o</span>
             <span className="letter">n</span>
             <span className="letter">t</span>
-          </a>
-          <a>
+          </div>
+          <div>
             <span className="letter">e</span>
             <span className="letter">n</span>
             <span className="letter">d</span>
-          </a>
-          <a>
+          </div>
+          <div>
             <span className="letter">&</span>
-          </a>
+          </div>
         </div>
         <div className="line fancy">
-          <a>
+          <Link href="#">
             <span className="letter">p</span>
             <span className="letter">r</span>
             <span className="letter">o</span>
@@ -66,13 +67,13 @@ export const Block = ({ scrollY }: BlockProps) => {
             <span className="letter">i</span>
             <span className="letter">n</span>
             <span className="letter">g</span>
-          </a>
+          </Link>
         </div>
         <div className="line fancy">
-          <a>
+          <Link href="#">
             <span className="letter">@</span>
-          </a>
-          <a>
+          </Link>
+          <Link href="#">
             <span className="letter">a</span>
             <span className="letter">o</span>
             <span className="letter">e</span>
@@ -81,7 +82,7 @@ export const Block = ({ scrollY }: BlockProps) => {
             <span className="letter">t</span>
             <span className="letter">n</span>
             <span className="letter">s</span>
-          </a>
+          </Link>
         </div>
       </div>
     </div>

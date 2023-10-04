@@ -1,22 +1,23 @@
+import Link from "next/link";
+
 interface DropdownItemProps {
-    children?: React.ReactNode
-    leftIcon?: React.ReactNode
-    rightIcon?: React.ReactNode
+    children?: React.ReactNode;
+    leftIcon?: React.ReactNode;
+    href: string;
 }
 
 export const DropdownItem = ({
     children,
     leftIcon,
-    rightIcon
+    href
 }: DropdownItemProps) => {
     return (
-        <a
-            href="#"
-            className="h-[50px] flex items-center rounded-sm p-2 hover:bg-[#364418] transition-all duration-500"
+        <Link
+            href={href}
+            className="h-[50px] flex items-center rounded-sm p-2 hover:bg-[#364418] transition-all duration-500 text-txt"
         >
-            <span className="">{leftIcon}</span>
+            <span className="w-[32px] h-[32px] rounded-[50%] p-[5px] m-[2px] flex items-center justify-center bg-txt mx-2">{leftIcon}</span>
             {children}
-            <span className="ml-auto"> {rightIcon}</span>
-        </a>
+        </Link>
     );
 }
