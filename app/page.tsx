@@ -29,17 +29,17 @@ const HomePage = () => {
         <NavItem icon={<FolderGit2 className="text-bg"/>} href="/projects" scrollY={scrollY}/>
         <NavItem icon={<ChevronDown className="text-bg"/>} dropdown scrollY={scrollY}>
           <DropdownMenu>
-            <DropdownItem href="/primitives" leftIcon="🙈">Primitives</DropdownItem>
-            <DropdownItem href="/objects" leftIcon="💎">Objects</DropdownItem>
-            <DropdownItem href="/boolean" leftIcon="✅">Boolean Expressions</DropdownItem>
-            <DropdownItem href="/iteration" leftIcon="⚙️">Iteration</DropdownItem>
-            <DropdownItem href="/classes" leftIcon="🎓">Classes</DropdownItem>
-            <DropdownItem href="/arrays" leftIcon="📦">Arrays</DropdownItem>
-            <DropdownItem href="/arraylists" leftIcon="🎁">ArrayLists</DropdownItem>
-            <DropdownItem href="/sorting" leftIcon="📈">Searching and Sorting</DropdownItem>
-            <DropdownItem href="/arrays2d" leftIcon="🗃️">2D Arrays</DropdownItem>
-            <DropdownItem href="/inheritance" leftIcon="👨‍👩‍👦">Inheritance</DropdownItem>
-            <DropdownItem href="/recursion" leftIcon="♻️">Recursion</DropdownItem>
+            <DropdownItem href="/blog/primitives" leftIcon="🙈">Primitives</DropdownItem>
+            <DropdownItem href="/blog/objects" leftIcon="💎">Objects</DropdownItem>
+            <DropdownItem href="/blog/boolean" leftIcon="✅">Boolean Expressions</DropdownItem>
+            <DropdownItem href="/blog/iteration" leftIcon="⚙️">Iteration</DropdownItem>
+            <DropdownItem href="/blog/classes" leftIcon="🎓">Classes</DropdownItem>
+            <DropdownItem href="/blog/arrays" leftIcon="📦">Arrays</DropdownItem>
+            <DropdownItem href="/blog/arraylists" leftIcon="🎁">ArrayLists</DropdownItem>
+            <DropdownItem href="/blog/sorting" leftIcon="📈">Searching and Sorting</DropdownItem>
+            <DropdownItem href="/blog/arrays2d" leftIcon="🗃️">2D Arrays</DropdownItem>
+            <DropdownItem href="/blog/inheritance" leftIcon="👨‍👩‍👦">Inheritance</DropdownItem>
+            <DropdownItem href="/blog/recursion" leftIcon="♻️">Recursion</DropdownItem>
           </DropdownMenu>
         </NavItem>
       </Navbar>

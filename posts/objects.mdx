@@ -1,0 +1,72 @@
+---
+title: 'Using Objects in Java'
+date: '2023-02-07'
+---
+
+## Using Objects
+
+### Instances of Classes
+
+A class is a blueprint for creating objects with defined behaviors and attributes. An object is a specific entity made from a class. Objects have behaviors and attributes defined by the class. If two variables refer to the same object, each change will affect both.
+
+### Creating Objects
+
+Constructors are used to initialize attributes. They have the same name as the class and are defined without a return type. The code below is an example of a constructor for a **`Person`** class:
+
+~~~java
+public Person(String nm, int ag, boolean ad) { // formal parameters
+    name = nm;
+    age = ag;
+    isAdult = ad;
+}
+~~~
+
+In a separate class, you can create an object like this:
+
+~~~java
+Person bob = new Person("bob", 15, false); // actual parameters
+~~~
+
+Constructors can be overloaded, meaning there can be multiple constructors with different parameters, including a default constructor with no parameters. If an object is declared but not initialized, it is **`null`**, a special value that indicates it is not associated with any object.
+
+## Calling Void Methods
+
+Methods are called by their name followed by parentheses. If you are calling a method of an object, use **`objectName.method()`**, not the class name. A **`NullPointerException`** will be thrown if the object is not initialized. Methods with parameters require the types to match. Methods can also be overloaded, meaning they can have different parameter lists for similar tasks.
+
+## Calling Non-Void Methods
+
+A non-void method returns a value based on the method signature. The return value must be stored in a variable or used in an expression.
+
+## String Objects and Methods
+
+String objects may be initialized with double quotes or **`new String("value")`**. Strings are immutable and cannot be changed. Concatenation joins strings together, and **`+=`** joins and redefines a variable. Primitives can be concatenated and converted to a string. Escape sequences such as **`\"`**, **`\\`**, and **`\n`** represent a double quote, a backslash, and a new line, respectively. String methods are listed in the APCSA JQR document. One example of a string method is the **`substring(a, b)`** method, which returns a String from index **`a`** to index **`b`**, but not including it.
+
+## Wrapper Classes
+
+Wrapper classes convert primitives to reference types. Autoboxing is the automatic conversion from primitive to wrapper. It can be passed as a parameter to a method that expects a wrapper or assigned to a variable of the wrapper class. Unboxing is the automatic conversion from a wrapper to a primitive. It can be passed as a parameter to a method that expects a primitive or assigned to a variable of primitive type.
+
+Here's an example of using a wrapper class to convert a primitive to a reference type and perform autoboxing:
+
+~~~java
+int num = 42; // primitive int
+Integer numObj = num; // autoboxing - converting primitive to Integer object
+System.out.println(numObj); // prints "42"
+~~~
+
+And here's an example of using a wrapper class to convert a reference type back to a primitive and perform unboxing:
+
+~~~java
+Double doubleObj = 3.14; // Double object
+double num = doubleObj; // unboxing - converting Double object to primitive double
+System.out.println(num); // prints "3.14"
+~~~
+
+## Math Class
+
+The **`Math`** class provides static methods that are called using the class name **`Math`**. It is part of the **`java.lang`** package. The **`Math.random()`** method generates a random double from 0 (inclusive) to 1 (exclusive). An example of generating a random number from 25 to 60 is:
+
+~~~java
+int rand = (int)(Math.random() * 36) + 25; // random number from 25 to 60
+~~~
+
+The full list of **`Math`** class methods can be found in the JQR.

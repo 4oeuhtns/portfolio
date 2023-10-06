@@ -1,0 +1,74 @@
+---
+title: 'Iteration in Java'
+date: '2023-02-09'
+---
+
+## While Loops
+
+A while loop is used when you need to repeat a block of code while a certain condition is true. The condition is tested before the code in the loop is executed. If the condition is true, the code is executed, and then the condition is tested again. This process continues until the condition becomes false.
+
+~~~java
+while (condition) {
+    // code to be executed
+}
+~~~
+
+An example of an algorithm that uses a while loop is finding the sum of all digits:
+
+~~~java
+int num = 1232;
+int sum = 0;
+while (num > 0) {
+    sum += num % 10;
+    num /= 10;
+}
+~~~
+
+In this example, the loop gets the last digit of the number and removes it, continuing until the number reaches 0.
+
+## For Loops
+
+A for loop is used when you need to execute a block of code a fixed number of times. The number of times the loop is executed is determined by the loop control variable, which is usually an integer.
+
+~~~java
+for (initialization; condition; update) {
+    // code to be executed
+}
+~~~
+
+This is an example of a for loop that prints numbers from 1 to **`n`**:
+
+~~~java
+for (int i = 0; i <= n; i++) {
+    System.out.println(i);
+}
+~~~
+
+An example of an algorithm that uses a for loop is for calculating interest:
+
+~~~java
+int years = 10;
+double money = 200.0;
+double interest = 0.1;
+for (int i = 0; i < years; i++) {
+    money += money * interest;
+}
+~~~
+
+In this example, the loop calculates the total price after a certain number of years, with the interest percentage as a decimal.
+
+## Nested Loops
+
+Nested loops are loops that are placed inside other loops. They are used when you need to iterate over a two-dimensional data structure, such as a 2D array.
+
+~~~java
+for (int i = 0; i < rows; i++) {
+    for (int j = 0; j < columns; j++) {
+        // code to be executed
+    }
+}
+~~~
+
+### Informal Code Analysis
+
+Before running a program, you can perform an informal code analysis to estimate the runtime and execution count of different statements. This can help you identify potential bottlenecks or inefficiencies in your code. One of the ways to calculate your execution count for nested loops is to multiply the number of times the outside loop runs by the number of times the inside loop runs.

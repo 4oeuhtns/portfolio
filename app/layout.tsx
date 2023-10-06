@@ -1,12 +1,12 @@
 import { Cursor } from '@/components/cursor/cursor'
 import './globals.css'
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Fira_Sans } from 'next/font/google'
 
 import { cn } from '@/lib/utils'
 
 
-const inter = Inter({ subsets: ['latin'] })
+const font = Fira_Sans({ subsets: ['latin'], weight: ['400'] })
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -20,8 +20,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      
-      <body className={cn(inter.className)}>
+  
+      <body className={cn(font.className, 'bg-bg')}>
         {children}
         <Cursor/>
       </body>
