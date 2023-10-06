@@ -1,0 +1,64 @@
+---
+title: 'Two Dimensional Arrays in Java'
+date: '2023-02-18'
+---
+
+## Creating 2D Arrays
+
+To create a 2D array, we use the same syntax as a 1D array, but with an additional set of square brackets. For example, **`int[][] matrix = new int[3][4];`** creates a 2D array with three rows and four columns. We can also use an initializer list to create a 2D array: **`int[][] matrix = {{1, 2}, {3, 4}, {5, 6}};`** creates a 2D array with three rows and two columns, where the first row contains the values 1 and 2, the second row contains 3 and 4, and the third row contains 5 and 6.
+
+To access a specific element in a 2D array, we use the syntax **`matrix[row][column]`**, where **`row`** is the index of the row and **`column`** is the index of the column. For example, **`matrix[1][2]`** would access the element in the second row and third column.
+
+## Traversing 2D Arrays
+
+There are several ways to traverse a 2D array. One way is to use nested loops, where the outer loop iterates over the rows and the inner loop iterates over the columns. For example, to print all the elements in a 2D array, we can use the following code:
+
+~~~java
+for (int i = 0; i < matrix.length; i++) {
+    for (int j = 0; j < matrix[i].length; j++) {
+        System.out.print(matrix[i][j] + " ");
+    }
+    System.out.println();
+}
+~~~
+
+Alternatively, we can use a for-each loop to iterate over the rows and columns:
+
+~~~java
+for (int[] row : matrix) {
+    for (int element : row) {
+        System.out.print(element + " ");
+    }
+    System.out.println();
+}
+~~~
+
+Finally, we can also traverse a 2D array in column-major order by iterating over the columns in the outer loop and the rows in the inner loop:
+
+~~~java
+for (int j = 0; j < matrix[0].length; j++) {
+    for (int i = 0; i < matrix.length; i++) {
+        System.out.print(matrix[i][j] + " ");
+    }
+    System.out.println();
+}
+~~~
+
+## Manipulating 2D Arrays
+
+All algorithms that work for 1D arrays also work for 2D arrays. For example, we can use linear search to search for a specific element in a 2D array. To search for an element in a 2D array, we can use the following code:
+
+~~~java
+public boolean contains(int[][] matrix, int target) {
+    for (int i = 0; i < matrix.length; i++) {
+        for (int j = 0; j < matrix[i].length; j++) {
+            if (matrix[i][j] == target) {
+                return true;
+            }
+        }
+    }
+    return false;
+}
+~~~
+
+This code snippet demonstrates how to create, traverse, and manipulate 2D arrays in Java.

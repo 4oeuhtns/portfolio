@@ -55,7 +55,7 @@ export const Block = ({ scrollY }: BlockProps) => {
           </div>
         </div>
         <div className="line fancy">
-          <Link href="#">
+          <Link href="https://github.com/4oeuhtns">
             <span className="letter">p</span>
             <span className="letter">r</span>
             <span className="letter">o</span>
@@ -70,10 +70,10 @@ export const Block = ({ scrollY }: BlockProps) => {
           </Link>
         </div>
         <div className="line fancy">
-          <Link href="#">
+          <Link href="www.linkedin.com/in/felix--zhao">
             <span className="letter">@</span>
           </Link>
-          <Link href="#">
+          <Link href="www.linkedin.com/in/felix--zhao">
             <span className="letter">a</span>
             <span className="letter">o</span>
             <span className="letter">e</span>

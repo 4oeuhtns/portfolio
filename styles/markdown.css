@@ -25,3 +25,7 @@ ul {
 ol {
     @apply list-decimal mx-7 mb-3
 }
+
+strong > code {
+    @apply bg-s border border-[#0A3540] rounded-md py-[1px] px-1
+}

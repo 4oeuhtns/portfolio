@@ -1,0 +1,189 @@
+---
+title: 'Common Searching and Sorting Algorithms in Java'
+date: '2023-02-17'
+---
+
+## Searching
+
+Searching is the process of finding a specific element or value in a data structure such as an array or a list. There are several searching algorithms, including linear search and binary search. 
+
+### Linear Search
+
+Linear search is a simple algorithm that searches for an element in an array or list by checking each element one by one. It starts at the beginning of the array and checks each element until it finds the element it's looking for or reaches the end of the array. If the element is found, the algorithm returns the index of the element; otherwise, it returns -1 to indicate that the element was not found.
+
+Example of linear search in Java:
+
+~~~java
+public int linearSearch(int[] arr, int target) {
+    for (int i = 0; i < arr.length; i++) {
+        if (arr[i] == target) {
+            return i;
+        }
+    }
+    return -1;
+}
+~~~
+
+### Binary Search
+Binary search is a more efficient algorithm that works by dividing the array or list in half repeatedly until it finds the element it's looking for. It requires the data to be sorted in ascending or descending order.
+
+The algorithm starts in the middle of the array and compares the target element to the middle element. If the target is less than the middle element, it searches the left half of the array; otherwise, it searches the right half. It repeats this process on the remaining half until the element is found or the remaining half has no elements left to search.
+
+Example of binary search in Java:
+
+~~~java
+public int binarySearch(int[] arr, int target) {
+    int low = 0;
+    int high = arr.length - 1;
+    while (low <= high) {
+        int mid = (low + high) / 2;
+        if (arr[mid] == target) {
+            return mid;
+        } else if (arr[mid] < target) {
+            low = mid + 1;
+        } else {
+            high = mid - 1;
+        }
+    }
+    return -1;
+}
+~~~
+
+## Sorting
+
+Sorting is the process of arranging the elements of a data structure in a specific order, such as ascending or descending order. There are several sorting algorithms, including selection sort, insertion sort, bubble sort, merge sort, and quicksort.
+
+### Selection Sort
+
+Selection sort is a simple sorting algorithm that repeatedly finds the minimum element from an unsorted part of the array and moves it to the front. The algorithm maintains two subarrays, one that is sorted and one that is unsorted.
+
+Example of selection sort in Java:
+
+~~~java
+public void selectionSort(int[] arr) {
+    for (int i = 0; i < arr.length - 1; i++) {
+        int minIndex = i;
+        for (int j = i + 1; j < arr.length; j++) {
+            if (arr[j] < arr[minIndex]) {
+                minIndex = j;
+            }
+        }
+        int temp = arr[i];
+        arr[i] = arr[minIndex];
+        arr[minIndex] = temp;
+    }
+}
+~~~
+
+### Insertion Sort
+
+Insertion sort is a simple sorting algorithm where the list is divided into two parts - sorted and unsorted. In each iteration, the first element of the unsorted part is taken and compared with the elements in the sorted part.
+
+Example of insertion sort in Java:
+
+~~~java
+public void insertionSort(int[] arr) {
+    for (int i = 1; i < arr.length; i++) {
+        int key = arr[i];
+        int j = i - 1;
+        while (j >= 0 && arr[j] > key) {
+            arr[j + 1] = arr[j];
+            j--;
+        }
+        arr[j + 1] = key;
+    }
+}
+~~~
+
+### Bubble Sort
+
+Bubble sort is a simple sorting algorithm that works by repeatedly swapping adjacent elements if they are in the wrong order.
+
+Example of bubble sort in Java:
+
+~~~java
+public void bubbleSort(int[] arr) {
+    int n = arr.length;
+    for (int i = 0; i < n-1; i++) {
+        for (int j = 0; j < n-i-1; j++) {
+            if (arr[j] > arr[j+1]) {
+                // swap arr[j] and arr[j+1]
+                int temp = arr[j];
+                arr[j] = arr[j+1];
+                arr[j+1] = temp;
+            }
+        }
+    }
+}
+~~~
+
+### Merge Sort
+
+Merge sort is a more efficient sorting algorithm that works by dividing the array into two halves, sorting each half recursively, and then merging the two sorted halves back together.
+
+Example of merge sort in Java:
+
+~~~java
+public void mergeSort(int[] arr, int left, int right) {
+    if (left < right) {
+        int mid = (left + right) / 2;
+        mergeSort(arr, left, mid);
+        mergeSort(arr, mid + 1, right);
+        merge(arr, left, mid, right);
+    }
+}
+
+public void merge(int[] arr, int left, int mid, int right) {
+    int[] temp = new int[right - left + 1];
+    int i = left, j = mid + 1, k = 0;
+    while (i <= mid && j <= right) {
+        if (arr[i] < arr[j]) {
+            temp[k++] = arr[i++];
+        } else {
+            temp[k++] = arr[j++];
+        }
+    }
+    while (i <= mid) {
+        temp[k++] = arr[i++];
+    }
+    while (j <= right) {
+        temp[k++] = arr[j++];
+    }
+    for (int m = 0; m < temp.length; m++) {
+        arr[left + m] = temp[m];
+    }
+}
+~~~
+
+### Quick Sort
+
+Quick sort is a sorting algorithm that follows the divide-and-conquer approach. The algorithm works by selecting a "pivot" element from the array and partitioning the other elements into two sub-arrays, according to whether they are less than or greater than the pivot.
+
+Example of quick sort in Java:
+
+~~~java
+public static void quickSort(int[] arr, int low, int high) {
+    if (low < high) {
+        int pivotIndex = partition(arr, low, high);
+        quickSort(arr, low, pivotIndex - 1);
+        quickSort(arr, pivotIndex + 1, high);
+    }
+}
+
+public static int partition(int[] arr, int low, int high) {
+    int pivot = arr[high];
+    int i = low - 1;
+    for (int j = low; j <= high - 1; j++) {
+        if (arr[j] <= pivot) {
+            i++;
+            int temp = arr[i];
+            arr[i] = arr[j];
+            arr[j] = temp;
+        }
+    }
+    int temp = arr[i + 1];
+    arr[i + 1] = arr[high];
+    arr[high] = temp;
+    return i + 1;
+}
+~~~

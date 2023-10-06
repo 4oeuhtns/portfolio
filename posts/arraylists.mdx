@@ -1,0 +1,57 @@
+---
+title: 'ArrayLists in Java'
+date: '2023-02-14'
+---
+
+## Introduction to ArrayLists
+
+An ArrayList is a collection of data, similar to an array, but with a dynamic size. The size of an ArrayList can be changed, unlike an array where the size is fixed once created. The ArrayList is part of the **`java.util`** package, so make sure to import it with **`import java.util.*;`** before using it in your program.
+
+### Initializing ArrayLists
+
+To initialize an ArrayList, use the following syntax:
+
+~~~java
+ArrayList<Type> list = new ArrayList<>();
+~~~
+
+Where **`Type`** is the type of object that you want to store in the ArrayList. You can also instantiate an ArrayList with an existing array, like this:
+
+~~~java
+int[] arr = {1, 2, 3, 4, 5};
+ArrayList<Type> list = new ArrayList<>();
+~~~
+
+You can also initially set the size of the ArrayList by specifying an integer in the constructor, like this:
+
+~~~java
+ArrayList<Integer> list = new ArrayList<>(5);
+~~~
+
+## ArrayList Methods
+Some of the most commonly used ArrayList methods include:
+
+- **`size()`** - returns the number of elements in the ArrayList.
+
+- **`add(a)`** - adds the object **`a`** to the end of the ArrayList and returns **`true`** if the element is added.
+
+- **`add(index, a)`** - inserts the element **`a`** at the specified index in the ArrayList and shifts everything from the index to the right.
+
+- **`get(index)`** - returns the object at the specified index in the ArrayList.
+
+- **`set(index, a)`** - replaces the object at the specified index in the ArrayList with the element **`a`** and returns the original element.
+
+- **`remove(index)`** - removes the object at the specified index from the ArrayList and returns it.
+
+When passing an ArrayList into a method, it is passed by reference. This means that when you make changes to the ArrayList inside the method, the changes are made to the original ArrayList. Note that if you pass in an ArrayList without specifying the type, the compiler will give a warning because elements of different types can be added to the ArrayList, resulting in runtime errors.
+
+## Traversing ArrayLists
+You can traverse an ArrayList using a for loop or a while loop, just like with arrays. You can also use a for-each loop to iterate over the elements in the ArrayList:
+
+~~~java
+for (Type a : list) {
+    // do something with a
+}
+~~~
+
+Note that you cannot modify the size of the ArrayList while iterating over it with a for-each loop, or you will get a **`ConcurrentModificationException`**. If you need to add or remove elements while iterating over the ArrayList, use a for loop instead.

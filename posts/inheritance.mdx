@@ -1,0 +1,82 @@
+---
+title: 'Inheritance and Object Oriented Programming in Java'
+date: '2023-02-19'
+---
+
+## Inheritance Relations
+
+Inheritance in Java involves a parent-child relationship between classes. The common attributes of related classes can be put into a superclass, which is the parent class. The classes that extend a superclass are called subclasses, and they inherit the attributes and behaviors of the parent class. This is called an is-a relationship, and it can be represented as a directed graph from the parent pointing to the child. The **`extends`** keyword means that a class inherits from another class, and a class can only extend one other class.
+
+### The Super Keyword
+
+When a subclass is created, the constructors are not inherited through inheritance. The **`super`** keyword is used to call anything from the parent, but only the first line of the subclass constructor can call **`super`**. Parameters can be passed in **`super`**, which calls whichever constructor with a matching signature. If a subclass constructor does not call **`super`**, Java inserts a call to the superclass's no-argument constructor. Regardless of whether the superclass constructor is called implicitly or explicitly, the superclass constructors call each other until the Java Object constructor is called, and then it goes back down the hierarchy.
+
+The **`super`** keyword can also be used to call methods. The syntax **`super.method()`** is used to call a valid method name and parameters. **`super`** can call overridden methods in a subclass, almost like a recursion call stack.
+
+### Method Overriding
+
+Method overriding is when a public method in a subclass has the same signature as a public method in the superclass. Subclasses inherit all public methods, which remain public in the subclass. When calling an overridden method, Java calls the method of the original object.
+
+### Reference Variables
+
+If class S "is-a" class T, assigning an object of type S to a reference of type T allows polymorphism. Polymorphic means that you can refer to objects from different classes, and when calling an overridden method, Java calls the method of the original object. If S "is-a" T, a reference of T can be used for T or S. This can be useful to store every class in one data structure.
+
+~~~java
+public class T {
+    public void act() {
+        // implementation not shown
+    }
+}
+
+public class S extends T {
+    public void act() {
+        // different implementation
+    }
+}
+
+// another class
+T obj = new S(); // obj has a reference variable of type T
+~~~
+
+## Polymorphism
+
+At compile time, methods in or inherited by the declared type determine the correctness of a non-static method call. The correct method based on the actual object type is run, not the reference variable. When an object's reference type is parent, it can be downcasted to the original object type using the syntax **`((Subclass)class).method();`**. Brackets must be used as the method operator takes precedence over casting. Polymorphism only applies when a method is overridden; a method that doesn't exist in the parent would give an error if the reference type is parent.
+
+## Downcasting
+
+When an object's reference variable is a parent, it can be cast to anything below the parent class to the object's class. This is used to access methods of different classes.
+
+## Abstract Classes
+
+Abstract classes are superclasses that are only a concept and cannot be instantiated. Abstract classes have no implementation of code, and if a class has one or more abstract methods, it must be declared abstract. Abstract classes can still have constructors. If a subclass of an abstract class does not have implementation of all abstract methods, it must also be declared abstract.
+
+An abstract class is declared with:
+
+~~~java
+abstract class Class {}
+~~~
+
+An abstract method can be declared as:
+
+~~~java
+public abstract void method();
+~~~
+
+## Interfaces
+Interfaces are like abstract classes, but they do not have fields or constructors, and all methods are abstract. If a class uses an interface, it can be declared using the syntax:
+
+~~~java
+interface Interface {}
+~~~
+
+A class can implement an interface with:
+
+~~~java
+class Class implements Interface {}
+~~~
+
+A class can implement multiple interfaces but only extend one superclass. Finally, an interface can still be used as a reference variable for an object, as long as the object implements the interface. This is useful as it can help apply polymorphism.
+
+## Object Class
+
+The object class is the superclass of all objects, all classes automatically extend the object class, even when not specified. The object class has the **`equals(Object other)`** method, which can check if 2 objects are equal and returns a boolean. It also has the **`toString()`** method, which can be used to print an object. These methods are often overwritten to provide more functionality. The **`instanceof`** operator can be used to check if an object is an instance of a specified class. Finally, all objects can have the object class reference variable associated with it.

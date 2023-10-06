@@ -1,0 +1,153 @@
+---
+title: 'Arrays in Java'
+date: '2023-02-12'
+---
+
+## Creation
+
+Arrays are created using the `new` keyword, which allocates memory for the array and initializes its elements to default values. The size of the array is established at creation and cannot be changed. Arrays can store references to objects or primitive values such as integers or doubles.
+
+Here is an example of creating an array of integers with size 5:
+
+~~~java
+int[] arr = new int[5];
+~~~
+
+The default initializations for array elements are as follows:
+
+- **`int`** - 0
+- **`double`** - 0.0
+- **`boolean`** - false
+- Reference variables - null
+
+Initialization lists can also be used to create and initialize an array in a single statement:
+
+~~~java
+int[] arr = {1, 2, 3, 4, 5};
+~~~
+
+## Access
+
+Array elements are accessed using square brackets **`[]`**, and their indices range from 0 to **`length-1`**. Trying to access an index outside of this range will result in an **`ArrayIndexOutOfBoundsException`**. The length of an array can be accessed using the **`array.length`** field.
+
+Here is an example of accessing an element in an array:
+
+~~~java
+int value = arr[2]; // retrieves the value at index 2
+~~~
+
+## Traversal
+
+To access all elements in an array, we can use iteration. We must use indexed loops, where elements are accessed by their indices. Care must be taken to ensure that the loop doesn't run for too many or too few iterations (off by one error).
+
+Here is an example of using an indexed loop to traverse an array:
+
+~~~java
+for (int i = 0; i < arr.length; i++) {
+    int value = arr[i]; // do something with value
+}
+~~~
+
+## For-each Loop
+
+A for-each loop, also known as an enhanced for loop, can be used to iterate over all elements in an array without using indices. This is a convenient way to traverse arrays and can improve code readability.
+
+Here is an example of using a for-each loop to traverse an array:
+
+~~~java
+for (int value : arr) {
+    // do something with value
+}
+~~~
+
+## Algorithms
+
+### Finding the minimum and maximum values in an array
+
+To find the minimum or maximum value in an array, follow these steps:
+
+1. Set the minimum or maximum variable to the first element in the array (e.g., **`int min = arr[0]`** or **`int max = arr[0]`**).
+
+2. Loop through the array from the second element (index 1) to the last element (**`index arr.length - 1`**).
+
+3. For each element in the array, compare it to the current minimum or maximum value.
+
+4. If the element is smaller than the current minimum value, update the minimum variable.
+
+5. If the element is larger than the current maximum value, update the maximum variable.
+
+6. After traversing the entire array, the minimum or maximum variable will hold the smallest or largest element in the array, respectively.
+
+You can also keep track of the index of the minimum or maximum value by initializing an index variable to 0 and updating it whenever you update the corresponding minimum or maximum variable.
+
+~~~java
+int[] arr = {5, 2, 7, 3, 1};
+
+int min = arr[0];
+int max = arr[0];
+
+for (int i = 1; i < arr.length; i++) {
+    if (arr[i] < min) {
+        min = arr[i];
+    }
+    if (arr[i] > max) {
+        max = arr[i];
+    }
+}
+
+System.out.println("Minimum value: " + min);
+System.out.println("Maximum value: " + max);
+~~~
+
+### Calculating the average value of an array
+
+To calculate the average value of an array, follow these steps:
+
+1. Initialize a variable to 0 to store the cumulative sum of all the elements in the array.
+
+2. Loop through the array and add each element to the cumulative sum variable.
+
+3. After traversing the entire array, divide the cumulative sum variable by the length of the array to get the average value.
+
+~~~java
+int[] arr = {5, 2, 7, 3, 1};
+
+double sum = 0;
+
+for (int i = 0; i < arr.length; i++) {
+    sum += arr[i];
+}
+
+double average = sum / arr.length;
+
+System.out.println("Average value: " + average);
+~~~
+
+### Shifting the elements in an array
+
+To shift the elements in an array by a specific amount, follow these steps:
+
+1. Make a new array with the same length as the original array to store the final shifted array.
+
+2. Loop through the original array, and for each element, add the specific shift amount to its index and take the result modulo the length of the array.
+
+3. Store the value of the original element in the corresponding index in the new array.
+
+4. Repeat steps 2-3 for all elements in the original array.
+
+5. The new array will now contain the elements from the original array shifted by the specified amount. To prevent elements from going out of bounds, use the modulo operator to cycle back to the beginning of the array if necessary.
+
+~~~java
+int[] arr = {5, 2, 7, 3, 1};
+
+int shiftAmount = 2;
+int[] shiftedArr = new int[arr.length];
+
+for (int i = 0; i < arr.length; i++) {
+    int shiftedIndex = (i + shiftAmount) % arr.length;
+    shiftedArr[shiftedIndex] = arr[i];
+}
+
+System.out.println("Original array: " + Arrays.toString(arr));
+System.out.println("Shifted array: " + Arrays.toString(shiftedArr));
+~~~
