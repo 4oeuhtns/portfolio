@@ -46,6 +46,7 @@
     "typescript": "5.2.2"
   },
   "devDependencies": {
+    "@types/mapbox__rehype-prism": "^0.8.1",
     "tailwindcss-text-fill-stroke": "^1.1.2"
   }
 }
