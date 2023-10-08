@@ -3,7 +3,7 @@
 }
 
 .letter {
-    @apply font-Garamond text-txt text-6xl uppercase;
+    @apply font-Garamond text-txt text-7xl uppercase;
 }
 
 .text:has(.fancy:hover) .line:not(.fancy:hover) {

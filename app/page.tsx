@@ -9,6 +9,9 @@ import { ChevronDown, FolderGit2 } from "lucide-react";
 
 import { useEffect, useState } from "react";
 
+import Image from "next/image";
+import profilePic from "@/public/profile.webp"
+
 const HomePage = () => {
   const [scrollY, setScrollY] = useState(0);
 
@@ -26,8 +29,8 @@ const HomePage = () => {
   return (
     <div>
       <Navbar scrollY={scrollY}>
-        <NavItem icon={<FolderGit2 className="text-bg"/>} href="/projects" scrollY={scrollY}/>
-        <NavItem icon={<ChevronDown className="text-bg"/>} dropdown scrollY={scrollY}>
+        <NavItem icon={<FolderGit2 className="text-bg" />} href="/projects" scrollY={scrollY} />
+        <NavItem icon={<ChevronDown className="text-bg" />} dropdown scrollY={scrollY}>
           <DropdownMenu>
             <DropdownItem href="/blog/primitives" leftIcon="🙈">Primitives</DropdownItem>
             <DropdownItem href="/blog/objects" leftIcon="💎">Objects</DropdownItem>
@@ -43,16 +46,39 @@ const HomePage = () => {
           </DropdownMenu>
         </NavItem>
       </Navbar>
-      <div className='relative w-screen h-screen flex justify-center items-center bg-bg'>
+      <div className='relative w-screen h-screen flex  justify-center items-center bg-bg'>
         <Block scrollY={scrollY} />
       </div>
-      <div className='w-screen h-screen flex justify-center items-center bg-bg'>
-
+      <div className='pt-[70vh] mx-10 flex justify-between'>
+        <div className="flex-shrink-0 mr-5">
+          <Image
+            className="rounded-full"
+            src={profilePic}
+            width={378}
+            height={378}
+            alt="Picture"
+            placeholder="blur"
+            style={{ width: '100%', height: 'auto' }}
+          />
+        </div>
+        <div className="font-Garamond text-txt text-5xl ">
+          <span className="inline-block animate-[wave_3s_ease-in-out_infinite] origin-[70%_70%]">👋</span> Sup.
+          <div className="font-sans">
+            <p className="my-10 text-xl">
+              My name is Felix Zhao, and I am a grade 11 student at William Lyon Mackenzie Collegiate Institute. My journey as a student has been marked by my deep passion for computers and science. From a young age, I've been captivated by the world of technology and the boundless possibilities it offers. This curiosity has driven me to explore the intricate workings of computers, from coding and programming to hardware and software.
+            </p>
+            <p className="my-10 text-xl">
+              In addition to my love for technology, my fascination with science knows no bounds. The pursuit of scientific knowledge, understanding the laws that govern the universe, and uncovering the mysteries of our world are endeavors that fill me with excitement. I find joy in conducting experiments, making observations, and pushing the boundaries of what we know.
+            </p>
+            <p className="my-10 text-xl">
+              My educational journey has been a quest for knowledge and hands-on experiences in these fields. With every challenge I encounter, I see an opportunity to learn and grow. Whether it's tackling complex coding projects, conducting scientific experiments, or collaborating with fellow enthusiasts, I relish the chance to expand my horizons.
+            </p>
+            <p className="my-10 text-xl">
+              I'm excited to embark on this continued journey of intellectual exploration and innovation. The world of technology and science is ever-evolving, and I'm determined to be at the forefront of these advancements. Together with a community of like-minded individuals, I hope to make meaningful contributions, push boundaries, and inspire others to pursue their passions.
+            </p>
+          </div>
+        </div>
       </div>
-      <div className='w-screen h-screen flex justify-center items-center bg-bg'>
-
-      </div>
-
     </div>
   );
 }

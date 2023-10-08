@@ -11,8 +11,9 @@ interface BlockProps {
 
 export const Block = ({ scrollY }: BlockProps) => {
   let y = scrollY
-  const threshold = 500;
+  const threshold = 500
   const minSize = 0.75
+  const opacity = 1-Math.min(y/threshold, 0.75);
   const scale = Math.max((y - 0) * (minSize - 1) / (threshold - 0) + 1, minSize);
   if (y > threshold) {
     y = (scrollY - threshold)/2;
@@ -20,7 +21,7 @@ export const Block = ({ scrollY }: BlockProps) => {
     y = 0;
   }
   return (
-    <div className="fixed flex justify-center" style={{transform: `translate(0, ${-y}px) scale(${scale})`}}>
+    <div className="fixed flex justify-center" style={{transform: `translate(0, ${-y}px) scale(${scale})`, opacity: `${opacity}`}}>
       <div className="text">
         <div className="line">
           <div>

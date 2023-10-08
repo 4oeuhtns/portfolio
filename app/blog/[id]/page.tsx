@@ -37,7 +37,6 @@ export async function generateMetadata({ params }: Props) {
 export default async function Post({ params }: Props) {
   const postData: PostData = await getPostData(params.id)
   const markdown = postData.content
-  console.log(markdown)
   return (
     <div>
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/themes/prism-dark.min.css" />
