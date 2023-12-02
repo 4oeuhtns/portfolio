@@ -71,10 +71,10 @@ export const Block = ({ scrollY }: BlockProps) => {
           </Link>
         </div>
         <div className="line fancy">
-          <Link href="www.linkedin.com/in/felix--zhao">
+          <Link href="https://www.linkedin.com/in/felix--zhao">
             <span className="letter">@</span>
           </Link>
-          <Link href="www.linkedin.com/in/felix--zhao">
+          <Link href="https://www.linkedin.com/in/felix--zhao">
             <span className="letter">a</span>
             <span className="letter">o</span>
             <span className="letter">e</span>
