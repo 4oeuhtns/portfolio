@@ -65,16 +65,16 @@ const HomePage = () => {
           <span className="inline-block animate-[wave_3s_ease-in-out_infinite] origin-[70%_70%]">👋</span> Sup.
           <div className="font-sans">
             <p className="my-10 text-xl">
-              My name is Felix Zhao, and I am a grade 11 student at William Lyon Mackenzie Collegiate Institute. My journey as a student has been marked by my deep passion for computers and science. From a young age, I've been captivated by the world of technology and the boundless possibilities it offers. This curiosity has driven me to explore the intricate workings of computers, from coding and programming to hardware and software.
+              My name is Felix Zhao, and I am a grade 11 student at William Lyon Mackenzie Collegiate Institute. My journey as a student has been marked by my deep passion for computers and science. From a young age, I&apos;ve been captivated by the world of technology and the boundless possibilities it offers. This curiosity has driven me to explore the intricate workings of computers, from coding and programming to hardware and software.
             </p>
             <p className="my-10 text-xl">
               In addition to my love for technology, my fascination with science knows no bounds. The pursuit of scientific knowledge, understanding the laws that govern the universe, and uncovering the mysteries of our world are endeavors that fill me with excitement. I find joy in conducting experiments, making observations, and pushing the boundaries of what we know.
             </p>
             <p className="my-10 text-xl">
-              My educational journey has been a quest for knowledge and hands-on experiences in these fields. With every challenge I encounter, I see an opportunity to learn and grow. Whether it's tackling complex coding projects, conducting scientific experiments, or collaborating with fellow enthusiasts, I relish the chance to expand my horizons.
+              My educational journey has been a quest for knowledge and hands-on experiences in these fields. With every challenge I encounter, I see an opportunity to learn and grow. Whether it&apos;s tackling complex coding projects, conducting scientific experiments, or collaborating with fellow enthusiasts, I relish the chance to expand my horizons.
             </p>
             <p className="my-10 text-xl">
-              I'm excited to embark on this continued journey of intellectual exploration and innovation. The world of technology and science is ever-evolving, and I'm determined to be at the forefront of these advancements. Together with a community of like-minded individuals, I hope to make meaningful contributions, push boundaries, and inspire others to pursue their passions.
+              I&apos;m excited to embark on this continued journey of intellectual exploration and innovation. The world of technology and science is ever-evolving, and I&apos;m determined to be at the forefront of these advancements. Together with a community of like-minded individuals, I hope to make meaningful contributions, push boundaries, and inspire others to pursue their passions.
             </p>
           </div>
         </div>

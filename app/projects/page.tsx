@@ -51,7 +51,7 @@ const Projects = () => {
                         alt="Picture"
                         placeholder="blur"
                     />
-                    Welcome to Timber Trek, a video game that tests your forest survival skills! In this game, you'll learn about surviving in the forest, navigate through various levels, overcome obstacles, and explore the forest.
+                    Welcome to Timber Trek, a video game that tests your forest survival skills! In this game, you&apos;çll learn about surviving in the forest, navigate through various levels, overcome obstacles, and explore the forest.
                     <Link className="flex items-center justify-center font-Garamond  text-xl italic hover:-translate-y-1 duration-500 my-5" href="https://github.com/4oeuhtns/TimberTrek">
                         <div className="-translate-y-[2px] text-bg">Learn more →</div>
                     </Link>
