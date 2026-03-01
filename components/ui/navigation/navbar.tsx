@@ -30,8 +30,16 @@ export const Navbar = ({
             &#123; Felix Zhao &#125;
           </Link>
         </div>
-        <div className="flex items-center">
+        <div className="flex items-center gap-2">
           {children}
+          <a
+            href="/Felix_Zhao_Resume.pdf"
+            download
+            className="flex items-center justify-center h-[32px] px-3 text-sm font-medium text-bg bg-txt rounded-lg hover:-translate-y-1 duration-500"
+            title="Download Resume"
+          >
+            Resume ↓
+          </a>
         </div>
       </div>
     </nav>
